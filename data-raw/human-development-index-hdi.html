@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+<meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"fe270b12c8",applicationID:"3267662"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://hdr.undp.org/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="http://hdr.undp.org/en/content/human-development-index-hdi" />
+<link rel="shortlink" href="http://hdr.undp.org/en/node/149" />
+<title>Human Development Index (HDI) | Human Development Reports</title>
+<link type="text/css" rel="stylesheet" href="http://hdr.undp.org/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://hdr.undp.org/sites/default/files/css/css_cw4bnvRT32hUwV7sG1paGMXRZeTG6Wlq2d4j9aqT4vA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://hdr.undp.org/sites/default/files/css/css_0NTWOh-dHIY_z_0nTqLHIUcxuiiG79Ab99lOfrHPaMg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://hdr.undp.org/sites/default/files/css/css_8QdrjWaSVHnurM24kX-UdKNi_oLiXMefFOKRvtlgsHU.css" media="all" />
+<!--[if IE 8]>
+<link type="text/css" rel="stylesheet" href="http://hdr.undp.org/sites/default/files/css/css_zwAkQee5UJB06pSx8DCJrpDsUbATWg00tbIIrXwTJtw.css" media="all" />
+<![endif]-->
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://hdr.undp.org/sites/default/files/css/css_p3GYPA1rignzTqzEQJVBiaJXx427RwKyd22GucfDJFQ.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="http://hdr.undp.org/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="all" />
+
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<script src="http://hdr.undp.org/sites/default/files/js/js_uvkeAZ2BFib7WxcPbFsLZ15zzDdra1ASMkwv9zijgFg.js"></script>
+<script src="http://hdr.undp.org/sites/default/files/js/js_tG5pNElF7jdZyW0ucRa0HM83XPmzKI51mC1EJoW5BK0.js"></script>
+<script src="http://hdr.undp.org/sites/default/files/js/js_RZB7o4Q36RWhJIE8UyODU8RPv0mfxTGTH_fQ1SDIBwI.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-24131528-15"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script></script>
+<script src="http://hdr.undp.org/sites/default/files/js/js_9-oyZMdeTwuOtWJkYVx8B4NczrD3Yg_29E5qn2rVWTc.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"en\/","ajaxPageState":{"theme":"hdr_theme","theme_token":"e6fYNDvEzHKpCvJ7TYFSRoREYe8uawS6Q1C94zhm5bA","js":{"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/contentanalysis\/contentanalysis.js":1,"sites\/all\/modules\/contrib\/contentoptimizer\/contentoptimizer.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"modules\/colorbox\/js\/colorbox.js":1,"modules\/colorbox\/styles\/default\/colorbox_style.js":1,"modules\/colorbox\/js\/colorbox_load.js":1,"modules\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/custom\/hdr_util\/js\/hdr_util.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"1":1,"sites\/all\/themes\/hdr_theme\/js\/respond.min.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-affix.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-alert.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-button.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-carousel.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-collapse.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-dropdown.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-modal.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-tooltip.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-popover.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-scrollspy.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-transition.js":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/js\/bootstrap-typeahead.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"modules\/locale\/locale.css":1,"sites\/all\/themes\/hdr_theme\/less\/style.less":1,"sites\/all\/themes\/hdr_theme\/bootstrap\/css\/bootstrap-responsive.css":1,"sites\/all\/themes\/hdr_theme\/less\/ie8.less":1,"sites\/all\/themes\/hdr_theme\/less\/ie7.less":1,"public:\/\/css_injector\/css_injector_4.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"intel":{"script_domain":"http:\/\/hdr.undp.org\/","module_path":"sites\/all\/modules\/contrib\/intel","system_path":"node\/149","page_title":"Human Development Index (HDI)","track_analytics":0,"track_adhoc_ctas":"track-cta","track_adhoc_events":"track-event","track_forms":1,"is_landingpage":0,"pushes":[{"method":"_setIntelVar","scope":"page","namespace":"analytics","keys":"pt","value":"1377610865"},{"method":"_setIntelVar","scope":"page","namespace":"analytics","keys":"et","value":"n"},{"method":"_setIntelVar","scope":"page","namespace":"analytics","keys":"ct","value":"page"},{"method":"_setIntelVar","scope":"page","namespace":"analytics","keys":"i.i","value":""}],"scorings":{"disqus_comment":10,"addthis_social_share":5,"addthis_social_share_clickback":0}},"disqus":{"callback_onnewcomment":"l10iDisqus.trackComment"},"urlIsAjaxTrusted":{"\/en\/content\/human-development-index-hdi":true}});</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-149 node-type-page i18n-en">
+<div id="skip-link">
+<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+</div>
+<header id="navbar" role="banner" class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container">
+<div class="container-inner">
+<div id="top-header">
+<div class="region region-top-header">
+<section id="block-search-form" class="block block-search clearfix">
+<form class="form-search content-search" action="/en/content/human-development-index-hdi" method="post" id="search-block-form--2" accept-charset="UTF-8"><div><div class="container-inline">
+<h2 class="element-invisible">Search form</h2>
+<div class="input-append"><input title="Enter the terms you wish to search for." class="search-query span2 form-text" placeholder="Search" type="text" id="edit-search-block-form--4" name="search_block_form" value="" size="15" maxlength="128" /><button type="submit" class="btn"><i class="icon-search"></i><span class="element-invisible">Search</span></button></div><button class="element-invisible btn btn-primary form-submit" id="edit-submit--2" name="op" value="Search" type="submit">Search</button>
+<input type="hidden" name="form_build_id" value="form--xCeMOrs4sjq_B7Bu1yUhnl3WqLqvnLl1agZyW2cy6Y" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>
+</section> 
+<section id="block-locale-language" class="block block-locale clearfix">
+<ul class="language-switcher-locale-url"><li class="en first last active"><a href="/en/content/human-development-index-hdi" class="language-link active" xml:lang="en" title="Human Development Index (HDI)">English</a></li>
+</ul>
+</section> 
+</div>
+</div>
+<a class="logo" href="/en" title="Home">
+<img src="http://hdr.undp.org/sites/all/themes/hdr_theme/logo.png" alt="Home" />
+</a>
+<div id="branding">
+<p class="lead">United Nations Development Programme</p>
+<h1 id="site-name">
+<a href="/en" title="Home" class="brand">Human Development Reports</a>
+</h1>
+</div>
+</div>
+</div>
+
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<div class="nav-collapse collapse">
+<nav role="navigation">
+<div class="region region-navigation">
+<section id="block-menu-block-2" class="block block-menu-block clearfix">
+<div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+<ul class="menu nav"><li class="first leaf menu-mlid-718"><a href="/en/home">Home</a></li>
+<li class="leaf menu-mlid-2006"><a href="/en/towards-hdr-2020">Towards HDR 2020</a></li>
+<li class="leaf has-children menu-mlid-1094"><a href="/en/2019-report">HDR 2019</a></li>
+<li class="leaf has-children active-trail menu-mlid-711"><a href="/en/data" class="active-trail">Data</a></li>
+<li class="leaf menu-mlid-720"><a href="/en/countries">Country Profiles</a></li>
+<li class="leaf menu-mlid-617"><a href="/en/blog">Blog</a></li>
+<li class="leaf menu-mlid-1736"><a href="/en/news">News</a></li>
+<li class="leaf has-children menu-mlid-825"><a href="/en/global-reports">Publications</a></li>
+<li class="last leaf has-children menu-mlid-847"><a href="/en/humandev" title="About Human Development">About</a></li>
+</ul></div>
+</section> 
+</div>
+</nav>
+</div>
+</div>
+</header>
+<div class="main-container container">
+<header role="banner" id="page-header">
+</header> 
+<div class="row-fluid">
+<aside class="span3" role="complementary">
+<div class="region region-sidebar-first well">
+<section id="block-menu-block-1" class="block block-menu-block clearfix">
+<h2 class="block-title">Data</h2>
+<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-2">
+<ul class="menu nav"><li class="first leaf menu-mlid-1716"><a href="http://hdr.undp.org/en/content/human-development-indicators-and-indices-2018-statistical-update-readers-guide">Reader&#039;s Guide</a></li>
+<li class="leaf active-trail active menu-mlid-1177 active"><a href="/en/content/human-development-index-hdi" class="active-trail active">Human Development Index (HDI)</a></li>
+<li class="leaf menu-mlid-1907"><a href="/en/2020-MPI">The 2020 Global Multidimensional Poverty Index (MPI)</a></li>
+<li class="leaf menu-mlid-2002"><a href="/en/gsni">Gender Social Norms Index (GSNI)</a></li>
+<li class="leaf menu-mlid-2004"><a href="/en/content/global-preparedness-and-vulnerability-dashboards">Global Preparedness and Vulnerability Dashboards</a></li>
+<li class="leaf menu-mlid-2007"><a href="/en/hdp-covid">Assessing the Crisis, Envisioning the Recovery</a></li>
+<li class="leaf menu-mlid-1181"><a href="/en/faq-page">Frequently Asked Questions (FAQs)</a></li>
+<li class="leaf menu-mlid-1236"><a href="/en/content/calculating-indices">Calculating the Indices</a></li>
+<li class="leaf menu-mlid-1246"><a href="http://hdr.undp.org/sites/default/files/hdr2019_technical_notes.pdf">2019 HDR Technical Notes</a></li>
+<li class="leaf menu-mlid-2000"><a href="http://hdr.undp.org/sites/default/files/2019_statistical_references.pdf">2019 Statistical References</a></li>
+<li class="expanded menu-mlid-746"><a href="/en/statistics/understanding">Understanding the data</a><ul class="menu nav"><li class="first leaf menu-mlid-1240"><a href="/en/content/developing-regions">Developing regions</a></li>
+<li class="leaf menu-mlid-1235"><a href="/en/content/principles-international-statistics">Principles of international statistics</a></li>
+<li class="last leaf menu-mlid-748"><a href="/en/statistics/understanding/sources">Sources of data used</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-1182"><a href="/en/content/human-development-report-office-statistical-data-api">Data Application Programming Interface (API)</a></li>
+</ul></div>
+</section> 
+<section id="block-block-15" class="block block-block clearfix">
+<ul class="nav nav-tabs nav-stacked">
+<li><a href="/sites/default/files/hdro_statistical_data_tables_1_15_d1_d5.xlsx">Download 2019 Human Development Data All Tables and Dashboards</a></li>
+<li><a href="/content/statistical-data-tables-7-15">Statistical Data Tables 7-15</a></li>
+<li><a href="/content/table-1-human-development-index-and-its-components-1">Table 1: Human Development Index and its components</a></li>
+<li><a href="/content/table-2-human-development-index-trends-1990–2018">Table 2: Trends in the Human Development Index, 1990-2018</a></li>
+<li><a href="/content/table-3-inequality-adjusted-human-development-index-ihdi">Table 3: Inequality-adjusted Human Development Index </a></li>
+<li><a href="/content/table-4-gender-development-index">Table 4: Gender Development Index</a></li>
+<li><a href="/content/table-5-gender-inequality-index-gii">Table 5: Gender Inequality Index</a></li>
+<li><a href="/content/table-6-multidimensional-poverty-index-developing-countries">Table 6: Multidimensional Poverty Index: developing countries</a></li>
+<li><a href="/content/dashboard-1-quality-human-development-0">Dashboard 1: Quality of human development</a></li>
+<li><a href="/content/dashboard-2-life-course-gender-gap-0">Dashboard 2: Life-course gender gap </a></li>
+<li><a href="/content/dashboard-3-women’s-empowerment-0">Dashboard 3: Women's empowerment</a></li>
+<li><a href="/content/dashboard-4-environmental-sustainability-0">Dashboard 4: Environmental sustainability</a></li>
+<li><a href="/content/dashboard-5-socioeconomic-sustainability-0">Dashboard 5: Socioeconomic sustainability</a></li>
+</ul>
+</section> 
+</div>
+</aside> 
+<section class="span9 trail-1-5">
+<a id="main-content"></a>
+<h1 class="page-header">Human Development Index (HDI)</h1>
+<div class="field field-name-field-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.<br />
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.</p>
+<p>The health dimension is assessed by life expectancy at birth, the education dimension is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. The standard of living dimension is measured by gross national income per capita. The HDI uses the logarithm of income, to reflect the diminishing importance of income with increasing GNI. The scores for the three HDI dimension indices are then aggregated into a composite index using geometric mean. Refer to <a href="/sites/default/files/hdr2019_technical_notes.pdf">Technical notes</a> for more details.</p>
+<p>The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and poverty.</p>
+<p>A fuller picture of a country's level of human development requires analysis of other indicators and information presented in the statistical annex of the report.</p>
+<p><br /><br />
+<img src="/sites/default/files/hdi_2019.jpg" /></p>
+</div></div></div> </section>
+</div>
+</div>
+<footer class="footer container">
+<div class="footer-top">
+</div>
+<div class="footer-bottom">
+<div class="region region-footer-bottom">
+<section id="block-menu-menu-secondary" class="block block-menu clearfix">
+<ul class="menu nav"><li class="first leaf"><a href="/en">Home</a></li>
+<li class="leaf"><a href="/en/content/contact-form" title="">Contact us</a></li>
+<li class="leaf"><a href="/en/user/login">Sign in</a></li>
+<li class="leaf"><a href="/en/content/copyright-and-terms-use">Terms of use</a></li>
+<li class="last leaf"><a href="https://visitor.r20.constantcontact.com/manage/optin?v=001uHIazSht99_SmsMvQ6fh7VDbVfe0kU0qRgc7Dsix0RqRJpTPO2HMS2-xOnzqaQUSgYQzHF_D8wHKMsLKYD3KcnbIectMQqQLXzaVY0akbmuV_r4MiP7uGavRZFAXupF30IdsLx84iMRaJRXR9tgcn6ZPJbsX6P6kMzkH1ikSOF8%3D">Subscribe to HDRO Newsletter</a></li>
+</ul>
+</section> 
+<section id="block-search-form--2" class="block block-search clearfix">
+<form class="form-search content-search" action="/en/content/human-development-index-hdi" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+<h2 class="element-invisible">Search form</h2>
+<div class="input-append"><input title="Enter the terms you wish to search for." class="search-query span2 form-text" placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><button type="submit" class="btn"><i class="icon-search"></i><span class="element-invisible">Search</span></button></div><button class="element-invisible btn btn-primary form-submit" id="edit-submit" name="op" value="Search" type="submit">Search</button>
+<input type="hidden" name="form_build_id" value="form-GKrKAiY3YxhPJYVJuOVO74Y7Kl6ipRoHfhN-DRUKRvE" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>
+</section> 
+<section id="block-block-23" class="block block-block clearfix">
+<p><br /></p>
+<p style="text-align:center;font-size:28px;">
+<span style="width:33%;align:center;"><a href="https://www.facebook.com/HumanDevelopmentReport"><img src="/sites/default/files/fb_icon.png" width="40px" height="40px" /></a></span>     <span style="width:33%;align:center;"><a href="https://twitter.com/HDRUNDP"><img src="/sites/default/files/twitter_icon.png" width="40px" height="40px" /></a></span>     <span style="width:33%;align:center;"><a href="https://www.youtube.com/channel/UC49v448-WnuNWJs4xmzT-QA"><img src="/sites/default/files/youtube_icon.png" width="40px" height="40px" /></a></span>
+</p>
+</section> 
+</div>
+</div>
+</footer>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fe270b12c8","applicationID":"3267662","transactionName":"ZAAHMkVWD0IHVkZYWl1KJAVDXg5fSUdXQkFEFjoWVlAEbgVUXl1XUgYO","queueTime":0,"applicationTime":300,"atts":"SEcERA1MHEw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
