@@ -166,3 +166,54 @@ names(buoy44025) <- paste(measure, units, sep = "_")
 #and separate them by a _
 #so we get YY_yr (which means years in years etc)
 
+
+
+
+
+
+
+######################### TASK 3 #########################
+#Read in the file using read_csv() from the tidyverse's readr package.
+# define file name
+filesol <- "data-raw/Y101_Y102_Y201_Y202_Y101-5.csv"
+# skip first two lines
+sol <- read_csv(filesol, skip = 2) %>% 
+  janitor::clean_names()
+# Filtering rows
+# This dataset includes bovine serum proteins from the medium on which
+# the cells were grown which need to be filtered out.
+# We also filter out proteins for which fewer than 2 peptides were detected
+# since we can not be confident about their identity. This is common practice
+# for such proteomic data.
+
+#filter the data to keep toes of human proteins identified by more than one peptide/delete those where less than two are deleted
+sol <- sol %>% 
+  filter(str_detect(description,
+                    "OS=Homo sapiens")) %>% 
+  filter(x1pep == "x")
+#this has just filter out the bovine proteins and those proteins identified with fewer than 2 peptides
+
+
+#() is characters, we are looking fri characters
+#^ means not
+#\s means white space
+#\ means dont take the next bit literally
+
+#extract the genename from the description and put into a column
+sol <- sol %>%
+  mutate(genename =  str_extract(description,"GN=[^\\s]+") %>% 
+           str_replace("GN=", ""))
+#extract top protein identifier and put into a column called protid
+sol <- sol %>%
+  mutate(protid =  str_extract(accession, ".::[^|;]+") %>% 
+           str_replace(".::", ""))
+
+filesol <- "data-raw/Y101_Y102_Y201_Y202_Y101-5.csv"
+# skip first two lines
+sol <- read_csv(filesol, skip = 2) %>% 
+  janitor::clean_names()
+
+sol2 <- sol %>% 
+  pivot_longer(names_to = "lineage_rep", 
+               values_to = "abndance",
+               cols = -c(accession, peptide_count, unique_peptides, confidence_score, anova_p, q_value, max_fold_change, power, highest_mean_condition, lowest_mean_condition, mass, description, x1pep))
